@@ -25,7 +25,7 @@ jobs:
 
     - name: Run Coffee Data Script
       env:
-        GSHEET_TOKEN: ${{ secrets.GHSEET_TOKEN }}
+        GSHEET_TOKEN: ${{ secrets.GSHEET_TOKEN }}
         GH_TOKEN: ${{ secrets.GH_TOKEN }}
       run: |
         python coffee.py
