@@ -147,7 +147,7 @@ def write_data2():
     variant_df = pd.read_csv("dataset/variants.csv")
 
     # Load credentials from the GSHEET_TOKEN environment variable
-    gsheet_credentials = json.loads(os.getenv("GSHEET_TOKEN"))
+    gsheet_credentials = json.loads(os.getenv("GHSEET_TOKEN"))
     gc = gspread.service_account_from_dict(gsheet_credentials)
 
     # Google Sheets details
