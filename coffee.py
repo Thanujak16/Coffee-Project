@@ -147,7 +147,11 @@ def write_data2():
     variant_df = pd.read_csv("dataset/variants.csv")
 
     # Load credentials from the GSHEET_TOKEN environment variable
-    gsheet_credentials = json.loads(os.getenv("GHSEET_TOKEN"))
+    gsheet_credentials = os.getenv("GSHEET_TOKEN")
+    if not gsheet_credentials:
+        raise ValueError("GSHEET_TOKEN is not set or is empty!")
+    
+    gsheet_credentials = json.loads(gsheet_credentials)
     gc = gspread.service_account_from_dict(gsheet_credentials)
 
     # Google Sheets details
@@ -170,7 +174,6 @@ def write_data2():
 
     print("Data has been written to separate Google Sheets successfully!")
 
-
 # Loop through each URL and fetch data, then save the results to CSV files
 for url in urls:
     data = fetch_data(url)
@@ -178,8 +181,6 @@ for url in urls:
     # Save product and variant data for each URL into separate files
     save_product_data(data["products"], "dataset/products.csv")
     save_variant_data(data["products"], "dataset/variants.csv")
-
-
 
 print("Data has been saved to 'products.csv' and 'variants.csv'.")
 write_data2()
