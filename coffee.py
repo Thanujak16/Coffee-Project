@@ -101,8 +101,8 @@ def write_data():
     variant_df = pd.read_csv("dataset/variants.csv")
 
     # Google Sheets details
-    PRODUCT_GSHEET_NAME = 'Coffee Products'
-    VARIANT_GSHEET_NAME = 'Coffee Variants'
+    PRODUCT_GSHEET_NAME = 'Coffee Prod'
+    VARIANT_GSHEET_NAME = 'Coffee Var'
     PRODUCT_TAB = 'Products'
     VARIANT_TAB = 'Variants'
     credentialsPath = os.path.expanduser("cred/ct-email-generation-fd91c0d8a01e.json")
@@ -171,8 +171,8 @@ def write_data2():
         variant_df['Date_Recorded'] = variant_df['created_at'].dt.date
 
     # Google Sheets details
-    PRODUCT_GSHEET_NAME = 'Coffee Products'
-    VARIANT_GSHEET_NAME = 'Coffee Variants'
+    PRODUCT_GSHEET_NAME = 'Coffee Prod'
+    VARIANT_GSHEET_NAME = 'Coffee Var'
     PRODUCT_TAB = 'Products'
     VARIANT_TAB = 'Variants'
     credentialsPath = os.path.expanduser("credentials/diamond-analysis-ac6758ca1ace.json")
